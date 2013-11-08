@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Josh and Erin</title>
+
+		<!-- Scripts -->
+		<script language="javascript">
+                var interval = 3000;
+                var random_display = 0;
+                var imageDir = "us_images/";
+
+                var imageNum = 0;
+                imageArray = new Array();
+                imageArray[imageNum++] = new imageItem(imageDir + "Test3.png");
+		imageArray[imageNum++] = new imageItem(imageDir + "Test4.png");
+		imageArray[imageNum++] = new imageItem(imageDir + "Test5.png");
+		imageArray[imageNum++] = new imageItem(imageDir + "Test6.png");
+		imageArray[imageNum++] = new imageItem(imageDir + "Test7.png");
+		imageArray[imageNum++] = new imageItem(imageDir + "Test8.png");
+		imageArray[imageNum++] = new imageItem(imageDir + "Test9.png");
+
+                var totalImages = imageArray.length;
+
+                function imageItem(image_location) {
+                        this.image_item = new Image();
+                        this.image_item.src = image_location;
+                }
+
+                function get_ImageItemLocation(imageObj) {
+                        return(imageObj.image_item.src)
+                }
+
+                function randNum(x, y) {
+                        var range = y - x + 1;
+                        return Math.floor(Math.random() * range) + x;
+                }
+
+                function getNextImage() {
+                        if(random_display) {
+                                imageNum = randomNum(0, totalImages-1);
+                        }
+                        else {
+                                imageNum = (imageNum+1) % totalImages;
+                        }
+
+                        var new_image = get_ImageItemLocation(imageArray[imageNum]);
+                        return(new_image);
+                }
+
+                function getPrevImage() {
+                        imageNum = (imageNum+(totalImages-1)) % totalImages;
+                        var new_image = get_ImageItemLocation(imageArray[imagesNum]);
+                        return(new_image);
+                }
+
+		function prevImage(place) {
+                        var new_image = getPrevImage();
+                        document[place].src = new_image;
+                }
+
+                function switchImage(place) {
+                        var new_image = getNextImage();
+                        document[place].src = new_image;
+                        var recur_call = "switchImage('"+place+"')";
+                        timerID = setTimeout(recur_call, interval);
+                }
+        </script>
+
+		<!-- Styles -->
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+		<style type="text/css">
+			body {
+				margin-top: 20px;
+			}
+			div.hero-unit {
+				overflow: hidden;
+				background: #d2d2d2;
+				padding: 30px;
+			}
+			div#header-words {
+				width: 350px;
+			}
+			div.hero-unit h1 {
+				text-shadow: 1px 1px 2px #ffffff;
+				filter: dropshadow(color=#ffffff, offx=1, offy=1);
+			}
+			div.hero-unit img {
+				float: right;
+				border: 8px solid #000;
+			}
+			div.subnav ul li {
+				float: right;
+			}
+			section {
+				margin-bottom: 50px;
+			}
+		</style>
+	</head>
+	
+	<!-- <body onLoad="switchImage('slideImg')"> -->
+	<body>
+
+	<div class="container">
+
+	<div class="subnav">
+    <ul class="nav nav-pills">
+      <li><a href="#gifts">Gifts</a></li>
+      <li><a href="#hotel">Hotel</a></li>
+      <li><a href="#reception">Reception</a></li>
+      <li><a href="#ceremony">Ceremony</a></li>
+      <li><a href="#pictures">Pictures</a></li>
+      <li><a href="#home">Home</a></li>
+    </ul>
+  </div>
+
+		<section id="home">
+		<div class="hero-unit">
+			<div id="pic-border">
+			<img name="slideImg" src="us_images/Test6a.png" width=500 height=333 border=0 />
+			</div>
+			<div id="header-words">
+			<h1>Josh and Erin</h1>
+			<p>We're married now!</p>
+			</div>
+			<center><p>...</p></center>
+			<p>Thanks to everyone who joined in celebrating this joyous day with us.</p>
+		</div>
+		</section>
+
+		<!-- Pictures 
+		 =================================================-->
+		<section id="pictures">
+			<h2>Pictures <small>engagement shoot and elsewhere</small></h2>
+
+			<p>
+				We just recently had our engagement shoot which took place in Lincoln. The pictures from that shoot are still being processed, but we will get them up as soon as they are available, so stay tuned. In the meantime, check out the rest of this site.
+			</p>
+			<p>
+				<span class="label label-info">New!</span> For those looking to adorn the walls and shelves of their home with photos of us, simply email Josh (jbranchaud@gmail.com) and he can send you the instructions for accessing the site for viewing and purchasing photos.
+			</p>
+		</section>
+
+
+		<!-- Ceremony
+		 =================================================-->
+		<section id="ceremony">
+			<!--<div style="float:right">
+				<script src="//www.gmodules.com/ig/ifr?url=http://hosting.gmodules.com/ig/gadgets/file/114281111391296844949/driving-directions.xml&amp;up_fromLocation=1615%20Howard%20Street%2C%20Omaha%2C%20NE&amp;up_myLocations=Lutheran%20Church%20of%20the%20Master%2C%20Omaha%2C%20NE&amp;up_defaultDirectionsType=&amp;up_autoExpand=&amp;synd=open&amp;w=320&amp;h=55&amp;title=&amp;brand=light&amp;lang=en&amp;country=US&amp;border=%23ffffff%7C0px%2C1px+solid+%23595959%7C0px%2C1px+solid+%23797979%7C0px%2C2px+solid+%23898989&amp;output=js"></script>
+			</div>-->
+			<div style="float:right">
+				<iframe width="450" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lutheran+Church+of+the+Master,+2617+S.+114th+St.+Omaha,+NE+68144&amp;aq=&amp;sll=41.234785,-96.090825&amp;sspn=0.009488,0.019205&amp;g=2617+S.+114th+St.+Omaha,+NE+68144&amp;ie=UTF8&amp;hq=Lutheran+Church+of+the+Master,&amp;hnear=2617+S+114th+St,+Omaha,+Nebraska+68144&amp;ll=41.234785,-96.090825&amp;spn=0.006295,0.006295&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lutheran+Church+of+the+Master,+2617+S.+114th+St.+Omaha,+NE+68144&amp;aq=&amp;sll=41.234785,-96.090825&amp;sspn=0.009488,0.019205&amp;g=2617+S.+114th+St.+Omaha,+NE+68144&amp;ie=UTF8&amp;hq=Lutheran+Church+of+the+Master,&amp;hnear=2617+S+114th+St,+Omaha,+Nebraska+68144&amp;ll=41.234785,-96.090825&amp;spn=0.006295,0.006295&amp;t=m" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+			</div>
+			<h2>Ceremony <small>info and directions</small></h2>	
+			<p>
+				<!--The ceremony will take place at Josh's home church, Lutheran Church of the Master in Omaha, NE. It is located right off of I-680 which makes it quick and easy to get to. Maps, Address, and Directions soon to come.-->
+				The ceremony will be held at 4:00 p.m. at Lutheran Church of the Master in Omaha (see map). LCM is a special place for the Branchaud family - not only was Josh confirmed there, but Josh's mother Bev was confirmed there as well, and Josh's parents and several aunts and uncles have been married there. Erin and Josh began dating while on one of LCM's mission trips in Mexico - yet another reason this place is dear to us! The marriage ceremony will be a traditional Lutheran service including communion - all are welcome. The service is expected to last about one hour.
+			</p>
+		</section>
+
+
+		<!-- Reception
+		 =================================================-->
+		<section id="reception">
+			<div style="float:right">
+				<iframe width="450" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1316+Jones+Street,+Omaha,+NE+68102&amp;aq=&amp;sll=41.255081,-95.933905&amp;sspn=0.009485,0.019205&amp;ie=UTF8&amp;hq=&amp;hnear=1316+Jones+St,+Omaha,+Nebraska+68102&amp;ll=41.255081,-95.933905&amp;spn=0.009486,0.019205&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=1316+Jones+Street,+Omaha,+NE+68102&amp;aq=&amp;sll=41.255081,-95.933905&amp;sspn=0.009485,0.019205&amp;ie=UTF8&amp;hq=&amp;hnear=1316+Jones+St,+Omaha,+Nebraska+68102&amp;ll=41.255081,-95.933905&amp;spn=0.009486,0.019205&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+			</div>
+			<h2>Reception <small>where the party begins</small></h2>
+			<!--<div style="float:right">
+				<script src="//www.gmodules.com/ig/ifr?url=http://hosting.gmodules.com/ig/gadgets/file/114281111391296844949/driving-directions.xml&amp;up_fromLocation=Lutheran%20Church%20of%20the%20Master%2C%20Omaha%2C%20NE&amp;up_myLocations=1316%20Jones%20Street%2C%20Omaha%2C%20NE&amp;up_defaultDirectionsType=&amp;up_autoExpand=&amp;synd=open&amp;w=320&amp;h=55&amp;title=&amp;brand=light&amp;lang=en&amp;country=US&amp;border=%23ffffff%7C0px%2C1px+solid+%23595959%7C0px%2C1px+solid+%23797979%7C0px%2C2px+solid+%23898989&amp;output=js"></script>
+			</div>-->
+			<p>
+				<!--We are hosting the reception in downtown Omaha at a fun and unique venue called 1316 Jones Street. And as you may have guessed, it is cleverly located at 1316 Jones Street.-->
+				The reception will take place in downtown Omaha at a fun and unique venue called 1316 Jones Street. And as you may have guessed, it is cleverly located at 1316 Jones Street. A cocktail hour will begin at 6:00 p.m., followed by a sit-down meal. Please remember to RSVP, as seating will be assigned by table and we don't want anyone to be without a meal!
+			</p>
+		</section>
+
+
+		<!-- Hotel
+		 =================================================-->
+		<section id="hotel">
+			<div style="float:right">
+				<iframe width="450" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Magnolia+Hotel,+1615+Howard+Street+Omaha,+NE+68102&amp;aq=&amp;sll=41.255349,-95.938021&amp;sspn=0.075882,0.153637&amp;ie=UTF8&amp;hq=Magnolia+Hotel,+1615+Howard+Street+Omaha,+NE+68102&amp;t=m&amp;ll=41.255349,-95.938021&amp;spn=0.016777,0.032015&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Magnolia+Hotel,+1615+Howard+Street+Omaha,+NE+68102&amp;aq=&amp;sll=41.255349,-95.938021&amp;sspn=0.075882,0.153637&amp;ie=UTF8&amp;hq=Magnolia+Hotel,+1615+Howard+Street+Omaha,+NE+68102&amp;t=m&amp;ll=41.255349,-95.938021&amp;spn=0.016777,0.032015" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+			</div>
+			<h2>Hotel <small>Magnolia Hotel Omaha</small></h2>
+
+			<p>
+				For out-of-town guests, a block of rooms has been reserved at Magnolia Hotel in downtown Omaha, just a five-block walk from the reception. To make sure you receive the discounted block rate, please make your reservations by calling 888-915-1110 and mentioning "Coleman-Branchaud Wedding" or by booking through this <a href="https://resweb.passkey.com/Resweb.do?mode=welcome_ei_new&eventID=8577428">link</a>.
+			</p>
+			<p style="margin-left:5em;">
+				<span style="color:#AAA; font-weight:normal;">The Address:</span><br />
+				1615 Howard Street<br />
+				Omaha, NE 68102<br />
+				<span style="color:#AAA; font-weight:normal;">The Phone Number:</span><br />
+				402.341.2500
+			</p>
+		<section>
+
+
+		<!-- Gifts
+		 =================================================-->
+		<section id="gifts">
+			<h2>Gifts <small>gift giving and registry</small></h2>
+
+			<p>
+				<!--Wedding gifts are a tricky subject for us. We find ourselves caught between the excitement of filling a future apartment with all sorts of brand new things that just about any new couple would want and the desire to live below our means in a life of intentional simplicity. As we continue to have a strong sense of conviction for the latter, we ask that those of you who would like to get us a gift will try to think of gift giving in a different way for our wedding. Over the years a number of organizations and causes have become very prominent in both of our lives. It would mean a lot to us if you would consider giving a gift to one of these organizations in honor of our wedding. Believe us when we say that this would mean more to us than just about any wedding gift. More information on the specific organizations is coming soon.<br />
+
+				For those attending a wedding shower and those that just can't help themselves, we have done registries at both Target and Bed, Bath, and Beyond.-->
+
+				On our wedding day we celebrate the overflowing of our cup of blessings. On this day of abundance and thanksgiving, we invite you to consider celebrating our commitment to each other and our commitment to the world by giving generously to one of the following organizations. These are organizations that are significant to us as a couple. Giving to them would truly be the most meaningful way to honor our wedding day.<br /><br />
+
+				<a href="http://www.htflive.org/index.cfm">Haitian Timoun Foundation</a> (HTF). The work of this organization supports children in Haiti, including the children who find their home in the St. Joseph Family - former street children, child slaves, and individuals with disabilities. In the summer of 2010, both of us had the opportunity to visit two of the St. Joseph family homes in Port-au-Prince and we continue to be blessed by the relationships that began on that trip. Haiti will always be close to our hearts.<br /><br />
+			
+				<a href="http://lincoln.nelcm.com/">The Lutheran Center</a> (NeLCM-Lincoln). A long, long time ago, Josh's parents found the Lutheran Center to be a church home while at college. They met there and fell in love. Now throughout our college years, The Lutheran Center has been a place to foster and strengthen our own relationship. We go to ask questions, to think deeply about God and the world, and to consider our vocations as disciples. The conversations and relationships that have developed in this place have been incredibly formational for our faith and for our love.<br /><br />
+
+				<a href="http://www.clinicwithaheart.org/">Clinic With A Heart</a> is a free medical clinic serving the medically uninsured and underinsured populations of Lincoln. Erin currently volunteers at the clinic as Spanish-English translator and is passionate about the importance of the work that the clinic does.<br /><br />
+
+				We have also registered for gifts at <a href="http://www.bedbathandbeyond.com/regGiftRegistry.asp?wrn=%2D1152946211&">Bed, Bath, and Beyond</a> and <a href="http://www.target.com/RegistryGiftGiverCmd?isPreview=false&status=completePageLink&listId=VVXgQ2_IyfEYg-bgIIIgPA&registryType=WD&isAjax=false">Target</a>.
+			</p>
+		</section>
+
+	<div style="margin-left: auto; margin-right: auto; background: #DDD; float: right; padding: .75em; margin: .75em; width: auto;border-radius: 10px; 
+-moz-border-radius: 10px; 
+-webkit-border-radius: 10px; 
+border: 1px solid #FFFFFF;">The Wedding of Josh and Erin</div>
+
+	</div>
+	</body>
+</html>
