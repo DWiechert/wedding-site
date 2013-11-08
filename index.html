@@ -1,143 +1,154 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Dan and Shanna</title>
+<head>
+<meta charset="utf-8">
+<title>Dan and Shanna</title>
 
-		<!-- Scripts -->
-		<script language="javascript">
-                var interval = 3000;
-                var random_display = 0;
-                var imageDir = "us_images/";
+<!-- Scripts -->
+<script language="javascript">
+	var interval = 3000;
+	var random_display = 0;
+	var imageDir = "us_images/";
 
-                var imageNum = 0;
-                imageArray = new Array();
-                imageArray[imageNum++] = new imageItem(imageDir + "Test3.png");
-		imageArray[imageNum++] = new imageItem(imageDir + "Test4.png");
-		imageArray[imageNum++] = new imageItem(imageDir + "Test5.png");
-		imageArray[imageNum++] = new imageItem(imageDir + "Test6.png");
-		imageArray[imageNum++] = new imageItem(imageDir + "Test7.png");
-		imageArray[imageNum++] = new imageItem(imageDir + "Test8.png");
-		imageArray[imageNum++] = new imageItem(imageDir + "Test9.png");
+	var imageNum = 0;
+	imageArray = new Array();
+	imageArray[imageNum++] = new imageItem(imageDir + "Test3.png");
+	imageArray[imageNum++] = new imageItem(imageDir + "Test4.png");
+	imageArray[imageNum++] = new imageItem(imageDir + "Test5.png");
+	imageArray[imageNum++] = new imageItem(imageDir + "Test6.png");
+	imageArray[imageNum++] = new imageItem(imageDir + "Test7.png");
+	imageArray[imageNum++] = new imageItem(imageDir + "Test8.png");
+	imageArray[imageNum++] = new imageItem(imageDir + "Test9.png");
 
-                var totalImages = imageArray.length;
+	var totalImages = imageArray.length;
 
-                function imageItem(image_location) {
-                        this.image_item = new Image();
-                        this.image_item.src = image_location;
-                }
+	function imageItem(image_location) {
+		this.image_item = new Image();
+		this.image_item.src = image_location;
+	}
 
-                function get_ImageItemLocation(imageObj) {
-                        return(imageObj.image_item.src)
-                }
+	function get_ImageItemLocation(imageObj) {
+		return (imageObj.image_item.src)
+	}
 
-                function randNum(x, y) {
-                        var range = y - x + 1;
-                        return Math.floor(Math.random() * range) + x;
-                }
+	function randNum(x, y) {
+		var range = y - x + 1;
+		return Math.floor(Math.random() * range) + x;
+	}
 
-                function getNextImage() {
-                        if(random_display) {
-                                imageNum = randomNum(0, totalImages-1);
-                        }
-                        else {
-                                imageNum = (imageNum+1) % totalImages;
-                        }
+	function getNextImage() {
+		if (random_display) {
+			imageNum = randomNum(0, totalImages - 1);
+		} else {
+			imageNum = (imageNum + 1) % totalImages;
+		}
 
-                        var new_image = get_ImageItemLocation(imageArray[imageNum]);
-                        return(new_image);
-                }
+		var new_image = get_ImageItemLocation(imageArray[imageNum]);
+		return (new_image);
+	}
 
-                function getPrevImage() {
-                        imageNum = (imageNum+(totalImages-1)) % totalImages;
-                        var new_image = get_ImageItemLocation(imageArray[imagesNum]);
-                        return(new_image);
-                }
+	function getPrevImage() {
+		imageNum = (imageNum + (totalImages - 1)) % totalImages;
+		var new_image = get_ImageItemLocation(imageArray[imagesNum]);
+		return (new_image);
+	}
 
-		function prevImage(place) {
-                        var new_image = getPrevImage();
-                        document[place].src = new_image;
-                }
+	function prevImage(place) {
+		var new_image = getPrevImage();
+		document[place].src = new_image;
+	}
 
-                function switchImage(place) {
-                        var new_image = getNextImage();
-                        document[place].src = new_image;
-                        var recur_call = "switchImage('"+place+"')";
-                        timerID = setTimeout(recur_call, interval);
-                }
-        </script>
+	function switchImage(place) {
+		var new_image = getNextImage();
+		document[place].src = new_image;
+		var recur_call = "switchImage('" + place + "')";
+		timerID = setTimeout(recur_call, interval);
+	}
+</script>
 
-		<!-- Styles -->
-		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-		<style type="text/css">
-			body {
-				margin-top: 20px;
-			}
-			div.hero-unit {
-				overflow: hidden;
-				background: #d2d2d2;
-				padding: 30px;
-			}
-			div#header-words {
-				width: 350px;
-			}
-			div.hero-unit h1 {
-				text-shadow: 1px 1px 2px #ffffff;
-				filter: dropshadow(color=#ffffff, offx=1, offy=1);
-			}
-			div.hero-unit img {
-				float: right;
-				border: 8px solid #000;
-			}
-			div.subnav ul li {
-				float: right;
-			}
-			section {
-				margin-bottom: 50px;
-			}
-		</style>
-	</head>
-	
-	<!-- <body onLoad="switchImage('slideImg')"> -->
-	<body>
+<!-- Styles -->
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+body {
+	margin-top: 20px;
+}
+
+div.hero-unit {
+	overflow: hidden;
+	background: #d2d2d2;
+	padding: 30px;
+}
+
+div#header-words {
+	width: 350px;
+}
+
+div.hero-unit h1 {
+	text-shadow: 1px 1px 2px #ffffff;
+	filter: dropshadow(color = #ffffff, offx = 1, offy = 1);
+}
+
+div.hero-unit img {
+	float: right;
+	border: 8px solid #000;
+}
+
+div.subnav ul li {
+	float: right;
+}
+
+section {
+	margin-bottom: 50px;
+}
+</style>
+</head>
+
+<!-- <body onLoad="switchImage('slideImg')"> -->
+<body>
 
 	<div class="container">
 
-	<div class="subnav">
-    <ul class="nav nav-pills">
-      <li><a href="#gifts">Gifts</a></li>
-      <li><a href="#hotel">Hotel</a></li>
-      <li><a href="#reception">Reception</a></li>
-      <li><a href="#ceremony">Ceremony</a></li>
-      <li><a href="#pictures">Pictures</a></li>
-      <li><a href="#home">Home</a></li>
-    </ul>
-  </div>
+		<div class="subnav">
+			<ul class="nav nav-pills">
+				<li><a href="#gifts">Gifts</a></li>
+				<li><a href="#hotel">Hotel</a></li>
+				<li><a href="#reception">Reception</a></li>
+				<li><a href="#ceremony">Ceremony</a></li>
+				<li><a href="#pictures">Pictures</a></li>
+				<li><a href="#home">Home</a></li>
+			</ul>
+		</div>
 
 		<section id="home">
-		<div class="hero-unit">
-			<div id="pic-border">
-			<img name="slideImg" src="us_images/Test6a.png" width=500 height=333 border=0 />
+			<div class="hero-unit">
+				<div id="pic-border">
+					<img name="slideImg" src="us_images/Test6a.png" width=500 height=333 border=0 />
+				</div>
+				<div id="header-words">
+					<h1>Dan and Shanna</h1>
+					<p>July 26, 2014</p>
+				</div>
+				<center>
+					<p>...</p>
+				</center>
+				<p>Site is coming soon.</p>
 			</div>
-			<div id="header-words">
-			<h1>Dan and Shanna</h1>
-			<p>July 26, 2014</p>
-			</div>
-			<center><p>...</p></center>
-			<p>Site is coming soon.</p>
-		</div>
 		</section>
 
 		<!-- Pictures 
 		 =================================================-->
 		<section id="pictures">
-			<h2>Pictures <small>engagement shoot and elsewhere</small></h2>
+			<h2>
+				Pictures <small>engagement shoot and elsewhere</small>
+			</h2>
 
+			<p>We just recently had our engagement shoot which took place in Lincoln. The pictures from
+				that shoot are still being processed, but we will get them up as soon as they are available, so
+				stay tuned. In the meantime, check out the rest of this site.</p>
 			<p>
-				We just recently had our engagement shoot which took place in Lincoln. The pictures from that shoot are still being processed, but we will get them up as soon as they are available, so stay tuned. In the meantime, check out the rest of this site.
-			</p>
-			<p>
-				<span class="label label-info">New!</span> For those looking to adorn the walls and shelves of their home with photos of us, simply email Josh (jbranchaud@gmail.com) and he can send you the instructions for accessing the site for viewing and purchasing photos.
+				<span class="label label-info">New!</span> For those looking to adorn the walls and shelves of
+				their home with photos of us, simply email Josh (jbranchaud@gmail.com) and he can send you the
+				instructions for accessing the site for viewing and purchasing photos.
 			</p>
 		</section>
 
@@ -145,78 +156,115 @@
 		<!-- Ceremony
 		 =================================================-->
 		<section id="ceremony">
-			<div style="float:right">
-				<div style="float:right">
-				<iframe width="450" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1316+Jones+Street,+Omaha,+NE+68102&amp;aq=&amp;sll=41.255081,-95.933905&amp;sspn=0.009485,0.019205&amp;ie=UTF8&amp;hq=&amp;hnear=1316+Jones+St,+Omaha,+Nebraska+68102&amp;ll=41.255081,-95.933905&amp;spn=0.009486,0.019205&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=1316+Jones+Street,+Omaha,+NE+68102&amp;aq=&amp;sll=41.255081,-95.933905&amp;sspn=0.009485,0.019205&amp;ie=UTF8&amp;hq=&amp;hnear=1316+Jones+St,+Omaha,+Nebraska+68102&amp;ll=41.255081,-95.933905&amp;spn=0.009486,0.019205&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>
-			</div>
-			<h2>Ceremony <small>info and directions</small></h2>	
-			<p>
-				The ceremony will be held at 4:00 p.m. at 1316 Jones. 1316 Jones has space for both an indoor and outside ceremony and will depend on the weather to which kind of ceremony we will be having. Let's pray for good weather so we can have an outdoor ceremony.
-			</p>
+			<div style="float: right">
+				<div style="float: right">
+					<iframe width="450" height="150" frameborder="0" scrolling="no" marginheight="0"
+						marginwidth="0"
+						src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1316+Jones+Street,+Omaha,+NE+68102&amp;aq=&amp;sll=41.255081,-95.933905&amp;sspn=0.009485,0.019205&amp;ie=UTF8&amp;hq=&amp;hnear=1316+Jones+St,+Omaha,+Nebraska+68102&amp;ll=41.255081,-95.933905&amp;spn=0.009486,0.019205&amp;t=m&amp;z=14&amp;output=embed"></iframe>
+					<br /> <small><a
+						href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=1316+Jones+Street,+Omaha,+NE+68102&amp;aq=&amp;sll=41.255081,-95.933905&amp;sspn=0.009485,0.019205&amp;ie=UTF8&amp;hq=&amp;hnear=1316+Jones+St,+Omaha,+Nebraska+68102&amp;ll=41.255081,-95.933905&amp;spn=0.009486,0.019205&amp;t=m&amp;z=14"
+						style="color: #0000FF; text-align: left">View Larger Map</a></small>
+				</div>
+				<h2>
+					Ceremony <small>info and directions</small>
+				</h2>
+				<p>The ceremony will be held at 4:00 p.m. at 1316 Jones. 1316 Jones has space for both an
+					indoor and outside ceremony and will depend on the weather to which kind of ceremony we will be
+					having. Let's pray for good weather so we can have an outdoor ceremony.</p>
 		</section>
 
 
 		<!-- Reception
 		 =================================================-->
 		<section id="reception">
-			<div style="float:right">
-				<iframe width="450" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1316+Jones+Street,+Omaha,+NE+68102&amp;aq=&amp;sll=41.255081,-95.933905&amp;sspn=0.009485,0.019205&amp;ie=UTF8&amp;hq=&amp;hnear=1316+Jones+St,+Omaha,+Nebraska+68102&amp;ll=41.255081,-95.933905&amp;spn=0.009486,0.019205&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=1316+Jones+Street,+Omaha,+NE+68102&amp;aq=&amp;sll=41.255081,-95.933905&amp;sspn=0.009485,0.019205&amp;ie=UTF8&amp;hq=&amp;hnear=1316+Jones+St,+Omaha,+Nebraska+68102&amp;ll=41.255081,-95.933905&amp;spn=0.009486,0.019205&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+			<div style="float: right">
+				<iframe width="450" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+					src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1316+Jones+Street,+Omaha,+NE+68102&amp;aq=&amp;sll=41.255081,-95.933905&amp;sspn=0.009485,0.019205&amp;ie=UTF8&amp;hq=&amp;hnear=1316+Jones+St,+Omaha,+Nebraska+68102&amp;ll=41.255081,-95.933905&amp;spn=0.009486,0.019205&amp;t=m&amp;z=14&amp;output=embed"></iframe>
+				<br /> <small><a
+					href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=1316+Jones+Street,+Omaha,+NE+68102&amp;aq=&amp;sll=41.255081,-95.933905&amp;sspn=0.009485,0.019205&amp;ie=UTF8&amp;hq=&amp;hnear=1316+Jones+St,+Omaha,+Nebraska+68102&amp;ll=41.255081,-95.933905&amp;spn=0.009486,0.019205&amp;t=m&amp;z=14"
+					style="color: #0000FF; text-align: left">View Larger Map</a></small>
 			</div>
-			<h2>Reception <small>where the party begins</small></h2>
-			<p>
-				The reception will also take place 1316 Jones. Cocktail will begin immediately following the ceremony while the wedding party goes and takes picture. When the wedding party returns, a sit-down meal will follow. We will have an open seating plan so make sure to choose the seat that best fits you.
-			</p>
+			<h2>
+				Reception <small>where the party begins</small>
+			</h2>
+			<p>The reception will also take place 1316 Jones. Cocktail will begin immediately following
+				the ceremony while the wedding party goes and takes picture. When the wedding party returns, a
+				sit-down meal will follow. We will have an open seating plan so make sure to choose the seat
+				that best fits you.</p>
 		</section>
 
 
 		<!-- Hotel
 		 =================================================-->
 		<section id="hotel">
-			<div style="float:right">
-				<iframe width="450" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=embassy+suites+omaha+ne&amp;ie=UTF8&amp;hq=embassy+suites&amp;hnear=Omaha,+Douglas,+Nebraska&amp;t=m&amp;cid=4511499220221284628&amp;ll=41.254,-95.932231&amp;spn=0.009679,0.012875&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?q=embassy+suites+omaha+ne&amp;ie=UTF8&amp;hq=embassy+suites&amp;hnear=Omaha,+Douglas,+Nebraska&amp;t=m&amp;cid=4511499220221284628&amp;ll=41.254,-95.932231&amp;spn=0.009679,0.012875&amp;z=15&amp;iwloc=A&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+			<div style="float: right">
+				<iframe width="450" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+					src="https://maps.google.com/maps?q=embassy+suites+omaha+ne&amp;ie=UTF8&amp;hq=embassy+suites&amp;hnear=Omaha,+Douglas,+Nebraska&amp;t=m&amp;cid=4511499220221284628&amp;ll=41.254,-95.932231&amp;spn=0.009679,0.012875&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+				<br /> <small><a
+					href="https://maps.google.com/maps?q=embassy+suites+omaha+ne&amp;ie=UTF8&amp;hq=embassy+suites&amp;hnear=Omaha,+Douglas,+Nebraska&amp;t=m&amp;cid=4511499220221284628&amp;ll=41.254,-95.932231&amp;spn=0.009679,0.012875&amp;z=15&amp;iwloc=A&amp;source=embed"
+					style="color: #0000FF; text-align: left">View Larger Map</a></small>
 			</div>
-			<h2>Hotel <small>Embassy Suites</small></h2>
+			<h2>
+				Hotel <small>Embassy Suites</small>
+			</h2>
 
 			<p>
-				For out-of-town guests, a block of rooms has been reserved at Embassy Suites in downtown Omaha, just a few blocks away from both the ceremony and reception. To make sure you receive the discounted block rate, please make your reservations by calling 888-915-1110 and mentioning "Coleman-Branchaud Wedding" or by booking through this <a href="https://resweb.passkey.com/Resweb.do?mode=welcome_ei_new&eventID=8577428">link</a>.
+				For out-of-town guests, a block of rooms has been reserved at Embassy Suites in downtown Omaha,
+				just a few blocks away from both the ceremony and reception. To make sure you receive the
+				discounted block rate, please make your reservations by calling 888-915-1110 and mentioning
+				"Coleman-Branchaud Wedding" or by booking through this <a
+					href="https://resweb.passkey.com/Resweb.do?mode=welcome_ei_new&eventID=8577428">link</a>.
 			</p>
-			<p style="margin-left:5em;">
-				<span style="color:#AAA; font-weight:normal;">The Address:</span><br />
-				555 South 10th Street<br />
-				Omaha, NE 68102<br />
-				<span style="color:#AAA; font-weight:normal;">The Phone Number:</span><br />
+			<p style="margin-left: 5em;">
+				<span style="color: #AAA; font-weight: normal;">The Address:</span><br /> 555 South 10th Street<br />
+				Omaha, NE 68102<br /> <span style="color: #AAA; font-weight: normal;">The Phone Number:</span><br />
 				(402) 346-9000
 			</p>
-		<section>
+			<section>
 
 
-		<!-- Gifts
+				<!-- Gifts
 		 =================================================-->
-		<section id="gifts">
-			<h2>Gifts <small>gift giving and registry</small></h2>
+				<section id="gifts">
+					<h2>
+						Gifts <small>gift giving and registry</small>
+					</h2>
 
-			<p>
-				<!--Wedding gifts are a tricky subject for us. We find ourselves caught between the excitement of filling a future apartment with all sorts of brand new things that just about any new couple would want and the desire to live below our means in a life of intentional simplicity. As we continue to have a strong sense of conviction for the latter, we ask that those of you who would like to get us a gift will try to think of gift giving in a different way for our wedding. Over the years a number of organizations and causes have become very prominent in both of our lives. It would mean a lot to us if you would consider giving a gift to one of these organizations in honor of our wedding. Believe us when we say that this would mean more to us than just about any wedding gift. More information on the specific organizations is coming soon.<br />
+					<p>
+						<!--Wedding gifts are a tricky subject for us. We find ourselves caught between the excitement of filling a future apartment with all sorts of brand new things that just about any new couple would want and the desire to live below our means in a life of intentional simplicity. As we continue to have a strong sense of conviction for the latter, we ask that those of you who would like to get us a gift will try to think of gift giving in a different way for our wedding. Over the years a number of organizations and causes have become very prominent in both of our lives. It would mean a lot to us if you would consider giving a gift to one of these organizations in honor of our wedding. Believe us when we say that this would mean more to us than just about any wedding gift. More information on the specific organizations is coming soon.<br />
 
 				For those attending a wedding shower and those that just can't help themselves, we have done registries at both Target and Bed, Bath, and Beyond.-->
 
-				On our wedding day we celebrate the overflowing of our cup of blessings. On this day of abundance and thanksgiving, we invite you to consider celebrating our commitment to each other and our commitment to the world by giving generously to one of the following organizations. These are organizations that are significant to us as a couple. Giving to them would truly be the most meaningful way to honor our wedding day.<br /><br />
+						On our wedding day we celebrate the overflowing of our cup of blessings. On this day of
+						abundance and thanksgiving, we invite you to consider celebrating our commitment to each other
+						and our commitment to the world by giving generously to one of the following organizations.
+						These are organizations that are significant to us as a couple. Giving to them would truly be
+						the most meaningful way to honor our wedding day.<br /> <br /> <a
+							href="http://www.htflive.org/index.cfm">Haitian Timoun Foundation</a> (HTF). The work of this
+						organization supports children in Haiti, including the children who find their home in the St.
+						Joseph Family - former street children, child slaves, and individuals with disabilities. In
+						the summer of 2010, both of us had the opportunity to visit two of the St. Joseph family homes
+						in Port-au-Prince and we continue to be blessed by the relationships that began on that trip.
+						Haiti will always be close to our hearts.<br /> <br /> <a href="http://lincoln.nelcm.com/">The
+							Lutheran Center</a> (NeLCM-Lincoln). A long, long time ago, Josh's parents found the Lutheran
+						Center to be a church home while at college. They met there and fell in love. Now throughout
+						our college years, The Lutheran Center has been a place to foster and strengthen our own
+						relationship. We go to ask questions, to think deeply about God and the world, and to consider
+						our vocations as disciples. The conversations and relationships that have developed in this
+						place have been incredibly formational for our faith and for our love.<br /> <br /> <a
+							href="http://www.clinicwithaheart.org/">Clinic With A Heart</a> is a free medical clinic
+						serving the medically uninsured and underinsured populations of Lincoln. Erin currently
+						volunteers at the clinic as Spanish-English translator and is passionate about the importance
+						of the work that the clinic does.<br /> <br /> We have also registered for gifts at <a
+							href="http://www.bedbathandbeyond.com/regGiftRegistry.asp?wrn=%2D1152946211&">Bed, Bath,
+							and Beyond</a> and <a
+							href="http://www.target.com/RegistryGiftGiverCmd?isPreview=false&status=completePageLink&listId=VVXgQ2_IyfEYg-bgIIIgPA&registryType=WD&isAjax=false">Target</a>.
+					</p>
+				</section>
 
-				<a href="http://www.htflive.org/index.cfm">Haitian Timoun Foundation</a> (HTF). The work of this organization supports children in Haiti, including the children who find their home in the St. Joseph Family - former street children, child slaves, and individuals with disabilities. In the summer of 2010, both of us had the opportunity to visit two of the St. Joseph family homes in Port-au-Prince and we continue to be blessed by the relationships that began on that trip. Haiti will always be close to our hearts.<br /><br />
-			
-				<a href="http://lincoln.nelcm.com/">The Lutheran Center</a> (NeLCM-Lincoln). A long, long time ago, Josh's parents found the Lutheran Center to be a church home while at college. They met there and fell in love. Now throughout our college years, The Lutheran Center has been a place to foster and strengthen our own relationship. We go to ask questions, to think deeply about God and the world, and to consider our vocations as disciples. The conversations and relationships that have developed in this place have been incredibly formational for our faith and for our love.<br /><br />
-
-				<a href="http://www.clinicwithaheart.org/">Clinic With A Heart</a> is a free medical clinic serving the medically uninsured and underinsured populations of Lincoln. Erin currently volunteers at the clinic as Spanish-English translator and is passionate about the importance of the work that the clinic does.<br /><br />
-
-				We have also registered for gifts at <a href="http://www.bedbathandbeyond.com/regGiftRegistry.asp?wrn=%2D1152946211&">Bed, Bath, and Beyond</a> and <a href="http://www.target.com/RegistryGiftGiverCmd?isPreview=false&status=completePageLink&listId=VVXgQ2_IyfEYg-bgIIIgPA&registryType=WD&isAjax=false">Target</a>.
-			</p>
-		</section>
-
-	<div style="margin-left: auto; margin-right: auto; background: #DDD; float: right; padding: .75em; margin: .75em; width: auto;border-radius: 10px; 
--moz-border-radius: 10px; 
--webkit-border-radius: 10px; 
-border: 1px solid #FFFFFF;">The Wedding of Josh and Erin</div>
-
+				<div
+					style="margin-left: auto; margin-right: auto; background: #DDD; float: right; padding: .75em; margin: .75em; width: auto; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; border: 1px solid #FFFFFF;">The
+					Wedding of Josh and Erin</div>
 	</div>
-	</body>
+</body>
 </html>
