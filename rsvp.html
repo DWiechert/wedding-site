@@ -305,7 +305,6 @@ form {
 
 				// update form based on number of guests selected from combo
 				$('#numberGuests').change(function() {
-					//var num = document.rsvpform.numberGuests.value;
 					var num = $('#numberGuests option:selected').text();
 					showTheseGuests(num);
 					showTheseFoodGroups(num);
