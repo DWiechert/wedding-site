@@ -1,10 +1,11 @@
 body {
 	margin-top: 20px;
+	font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;
 }
 
 div.hero-unit {
 	overflow: hidden;
-	background: #d2d2d2;
+	background: #FFFF66;
 	padding: 30px;
 }
 
@@ -19,7 +20,7 @@ div.hero-unit h1 {
 
 div.hero-unit img {
 	float: right;
-	border: 8px solid #000;
+	border: 8px solid #585858;
 }
 
 div.subnav ul li {
