@@ -1,0 +1,1 @@
+Follow these instructions to get the site up and running - https://www.digitalocean.com/community/articles/how-to-launch-your-site-on-a-new-ubuntu-12-04-server-with-lamp-sftp-and-dns
