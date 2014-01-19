@@ -24,6 +24,11 @@ div.hero-unit img {
 	border: 8px solid #585858;
 }
 
+div.mainnav ul li {
+	float: right;
+	font-size: 150%;
+}
+
 div.subnav ul li {
 	float: right;
 	font-size: 110%;
