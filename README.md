@@ -1,6 +1,6 @@
 # Dan and Shanna
 
-The website and blog for Dan and Shanna.
+The website Dan and Shanna's wedding information, [wiechertwedding.com](http://www.wiechertwedding.com/).
 
 ## License
 
