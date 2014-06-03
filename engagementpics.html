@@ -52,10 +52,15 @@
 		</div>
 
 		<div class="galleria">
-			<a href="images/engagementpics/HWE_003.jpg"><img src="images/engagementpics/thumbnail-HWE_003.jpg" data-layer="<h2>This is the first picture.</h2>"/></a>
-			<a href="images/engagementpics/HWE_004.jpg"><img src="images/engagementpics/thumbnail-HWE_004.jpg" data-title="Groom" data-description="Vacationing in New York City." /></a>
-			<a href="images/engagementpics/HWE_006.jpg"><img src="images/engagementpics/thumbnail-HWE_006.jpg" data-title="Us" data-description="Our very first picture." /></a>
-			<a href="images/engagementpics/HWE_010.jpg"><img src="images/engagementpics/thumbnail-HWE_010.jpg" data-title="Proposal" data-description="We're getting married!!" /></a>
+			<!-- Figure out if we want any captions or info -->
+<!-- 			<a href="images/engagementpics/HWE_003.jpg"><img src="images/engagementpics/thumbnail-HWE_003.jpg" data-layer="<h2>This is the first picture.</h2>"/></a> -->
+<!-- 			<a href="images/engagementpics/HWE_004.jpg"><img src="images/engagementpics/thumbnail-HWE_004.jpg" data-title="Groom" data-description="Vacationing in New York City." /></a> -->
+<!-- 			<a href="images/engagementpics/HWE_006.jpg"><img src="images/engagementpics/thumbnail-HWE_006.jpg" data-title="Us" data-description="Our very first picture." /></a> -->
+<!-- 			<a href="images/engagementpics/HWE_010.jpg"><img src="images/engagementpics/thumbnail-HWE_010.jpg" data-title="Proposal" data-description="We're getting married!!" /></a> -->
+			<a href="images/engagementpics/HWE_003.jpg"><img src="images/engagementpics/thumbnail-HWE_003.jpg" /></a>
+			<a href="images/engagementpics/HWE_004.jpg"><img src="images/engagementpics/thumbnail-HWE_004.jpg" /></a>
+			<a href="images/engagementpics/HWE_006.jpg"><img src="images/engagementpics/thumbnail-HWE_006.jpg" /></a>
+			<a href="images/engagementpics/HWE_010.jpg"><img src="images/engagementpics/thumbnail-HWE_010.jpg" /></a>
 			<a href="images/engagementpics/HWE_017.jpg"><img src="images/engagementpics/thumbnail-HWE_017.jpg" /></a>
 			<a href="images/engagementpics/HWE_018.jpg"><img src="images/engagementpics/thumbnail-HWE_018.jpg" /></a>
 			<a href="images/engagementpics/HWE_019.jpg"><img src="images/engagementpics/thumbnail-HWE_019.jpg" /></a>
@@ -78,9 +83,7 @@
 				transition: 'fade', // Fade between pictures
 				transitionSpeed: 600, // Take 0.6s to fade
 				carouselSpeed: 600, // Take 0.6s for carousel
-				lightbox: true, // Enable lightboxing for clicking on a picture
-				lightboxFadeSpeed: 600, // Take 0.6s for lightbox fade
-				lightboxTransitionSpeed: 600 // Take 0.6s for lightbox transitions
+				lightbox: true // Enable lightboxing for clicking on a picture
 			});
 			Galleria.ready(function() {
 				this.lazyLoadChunks(3); // Load the thumbnails 3 at a time
