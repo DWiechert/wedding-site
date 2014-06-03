@@ -27,6 +27,14 @@
 <!-- Styles -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet">
+<link href="galleria/themes/galleria-classicmod/galleria.classicmod.css" rel="stylesheet">
+<style>
+.galleria {
+	width: 1000px;
+	height: 700px;
+	background: #000;
+}
+</style>
 </head>
 
 <body>
@@ -41,6 +49,17 @@
 				<li><a href="index.html">Home</a></li>
 			</ul>
 		</div>
+
+		<div class="galleria">
+			<img src="images/aboutus/bride.jpg" data-title="Bride" data-description="Skiing in Copper Colorado." /> 
+			<img src="images/aboutus/groom.jpg" data-title="Groom" data-description="Vacationing in New York City." /> 
+			<img src="images/aboutus/ourstory.jpg" data-title="Us" data-description="Our very first picture." /> 
+			<img src="images/aboutus/proposal.jpg" data-title="Proposal" data-description="We're getting married!!" />
+		</div>
+		<script>
+			Galleria.loadTheme('galleria/themes/galleria-classicmod/galleria.classicmod.js');
+			Galleria.run('.galleria');
+		</script>
 
 		<!-- Copyright
 		 =================================================-->
