@@ -51,13 +51,33 @@
 		</div>
 
 		<div class="galleria">
-			<img src="images/aboutus/bride.jpg" /> 
-			<img src="images/aboutus/groom.jpg" data-title="Groom" data-description="Vacationing in New York City." /> 
-			<img src="images/aboutus/ourstory.jpg" data-title="Us" data-description="Our very first picture." /> 
-			<img src="images/aboutus/proposal.jpg" data-title="Proposal" data-description="We're getting married!!" />
+			<a href="images/engagementpics/HWE_003.jpg"><img src="images/engagementpics/thumbnail-HWE_003.jpg" data-layer="<h2>This is the first picture.</h2>"/></a>
+			<a href="images/engagementpics/HWE_004.jpg"><img src="images/engagementpics/thumbnail-HWE_004.jpg" data-title="Groom" data-description="Vacationing in New York City." /></a>
+			<a href="images/engagementpics/HWE_006.jpg"><img src="images/engagementpics/thumbnail-HWE_006.jpg" data-title="Us" data-description="Our very first picture." /></a>
+			<a href="images/engagementpics/HWE_010.jpg"><img src="images/engagementpics/thumbnail-HWE_010.jpg" data-title="Proposal" data-description="We're getting married!!" /></a>
+			<a href="images/engagementpics/HWE_017.jpg"><img src="images/engagementpics/thumbnail-HWE_017.jpg" /></a>
+			<a href="images/engagementpics/HWE_018.jpg"><img src="images/engagementpics/thumbnail-HWE_018.jpg" /></a>
+			<a href="images/engagementpics/HWE_019.jpg"><img src="images/engagementpics/thumbnail-HWE_019.jpg" /></a>
+			<a href="images/engagementpics/HWE_028.jpg"><img src="images/engagementpics/thumbnail-HWE_028.jpg" /></a>
+			<a href="images/engagementpics/HWE_029.jpg"><img src="images/engagementpics/thumbnail-HWE_029.jpg" /></a>
+			<a href="images/engagementpics/HWE_031.jpg"><img src="images/engagementpics/thumbnail-HWE_031.jpg" /></a>
+			<a href="images/engagementpics/HWE_039.jpg"><img src="images/engagementpics/thumbnail-HWE_039.jpg" /></a>
+			<a href="images/engagementpics/HWE_048.jpg"><img src="images/engagementpics/thumbnail-HWE_048.jpg" /></a>
+			<a href="images/engagementpics/HWE_056.jpg"><img src="images/engagementpics/thumbnail-HWE_056.jpg" /></a>
+			<a href="images/engagementpics/HWE_064.jpg"><img src="images/engagementpics/thumbnail-HWE_064.jpg" /></a>
+			<a href="images/engagementpics/HWE_070.jpg"><img src="images/engagementpics/thumbnail-HWE_070.jpg" /></a>
+			<a href="images/engagementpics/HWE_073.jpg"><img src="images/engagementpics/thumbnail-HWE_073.jpg" /></a>
+			<a href="images/engagementpics/HWE_074.jpg"><img src="images/engagementpics/thumbnail-HWE_074.jpg" /></a>
+			<a href="images/engagementpics/HWE_075.jpg"><img src="images/engagementpics/thumbnail-HWE_075.jpg" /></a>
 		</div>
 		<script>
 			Galleria.loadTheme('galleria/themes/galleria-classicmod/galleria.classicmod.js');
+			Galleria.configure({
+				thumbnails: 'lazy',
+			});
+			Galleria.ready(function() {
+				this.lazyLoadChunks(3);
+			});
 			Galleria.run('.galleria');
 		</script>
 
