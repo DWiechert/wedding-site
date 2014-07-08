@@ -1,9 +1,0 @@
-Other things to add to site:
-
-- Pictures page
-- Story page
-- About Us page
-- Add to survey drop-down list if they need a room and how many (just for estimate to Embassy Suites)
-- Add link to Hotels.com in case they want to use another hotel
-- Mention transportation when we figure that out
-- Link to Expedia.com for airlines
